@@ -6,83 +6,151 @@
     <title>Advanced Menu Page</title>
     <style>
         /* General Reset */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
 
-        /* Header Styling */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap; /* Permet au contenu de s'ajuster sur mobile */
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    flex: 1; /* Permet de prendre l’espace disponible */
+    text-align: center;
+}
 
-        header .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
+header .nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex: 1; /* Permet d’occuper l’espace disponible */
+    justify-content: flex-end; /* Alignement des boutons à droite */
+}
 
-        header .nav-buttons button {
-            background-color: white;
-            color: #4CAF50;
-            border: 1px solid #4CAF50;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
+header .nav-buttons button {
+    background-color: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
 
-        header .nav-buttons button:hover {
-            background-color: #45a049;
-            color: white;
-        }
+header .nav-buttons button:hover {
+    background-color: #45a049;
+    color: white;
+}
 
-        /* Main Content Styling */
-        main {
-            padding: 20px 10%;
-        }
+/* Main Content Styling */
+main {
+    padding: 20px 10%;
+}
 
-        main h2 {
-            color: #333;
-        }
+main h2 {
+    color: #333;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
 
-        main p {
-            color: #555;
-        }
+main p {
+    color: #555;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.8;
+}
 
-        /* Event Images */
-        .event {
-            margin: 20px 0;
-        }
+/* Event Images */
+.event {
+    margin: 20px 0;
+    text-align: center;
+}
 
-        .event img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-        }
-        footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 10px 0;
-      margin-top: 20px;
-      font-size: 14px;
+.event img {
+    width: 100%;
+    max-width: 600px; /* Limite la largeur sur les écrans larges */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event img:hover {
+    transform: scale(1.05); /* Agrandissement interactif au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Accentue l'ombre au survol */
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empile le contenu du header sur mobile */
+        padding: 10px 5%;
     }
+
+    header .nav-buttons {
+        justify-content: center; /* Centrer les boutons sur mobile */
+        margin-top: 10px;
+    }
+
+    main {
+        padding: 15px 5%;
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    main p {
+        font-size: 16px;
+    }
+
+    .event img {
+        max-width: 100%; /* Utilise toute la largeur disponible sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    header .nav-buttons button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    main h2 {
+        font-size: 22px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
